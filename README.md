@@ -1,215 +1,146 @@
-# 🛡️ HeimDall
+<div align="center">
+  <img src="./assets/heimdall-logo.png" alt="HeimDall Logo" width="260" />
 
-<p align="center">
-  <strong>The Digital Operating Platform for Organizations</strong><br>
-  <em>Observe. Understand. Act.</em>
-</p>
+  # HeimDall
 
-<p align="center">
-  <a href="#-about">About</a> •
-  <a href="#-problem">Problem</a> •
-  <a href="#-mvp">MVP</a> •
-  <a href="#-ai-contract-intelligence">AI</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-roadmap">Roadmap</a>
-</p>
+  ### Stay Ahead.
 
----
+  **The digital operating platform for organizations.**
 
-## 🚀 About
+  <p>
+    <em>Observe. Understand. Act.</em>
+  </p>
 
-**HeimDall** is an AI-powered organizational operating platform designed to bring **people, tasks, contracts, documents, communication, notifications, and organizational insights** into one connected workspace.
-
-The name is inspired by **Heimdall**, the watchful guardian from Norse mythology. The concept represents our goal: giving organizations better visibility into what is happening and helping them act on what matters.
-
-> **Information → Understanding → Action**
-
-HeimDall is being developed first as a focused MVP for a 4-week hackathon, with a long-term vision of becoming a real B2B SaaS product.
+  <p>
+    <img src="https://img.shields.io/badge/Journey%20to%20Mastery-2026-0b63ce?style=for-the-badge" alt="Journey to Mastery" />
+    <img src="https://img.shields.io/badge/Stage-MVP-111827?style=for-the-badge" alt="MVP" />
+    <img src="https://img.shields.io/badge/AI-Powered-2563eb?style=for-the-badge" alt="AI Powered" />
+    <img src="https://img.shields.io/badge/B2B-SaaS-0f766e?style=for-the-badge" alt="B2B SaaS" />
+  </p>
+</div>
 
 ---
 
-## ❗ Problem
+## 01 — One-Line Idea
 
-Modern organizations often use disconnected tools for tasks, communication, employee information, contracts, documents, reminders, and reporting.
-
-This creates fragmented information and makes it difficult to answer:
-
-> **What is happening? What requires attention? Who is responsible? What should happen next?**
-
-Important deadlines can be missed, business documents remain underused, and managers spend time manually collecting information from different systems.
+> **HeimDall is an AI-powered company operating platform that connects people, tasks, contracts, communication and organizational insights in one workspace — turning important information into actions before they are missed.**
 
 ---
 
-## 💡 Solution
+## 02 — Problem Statement
 
-HeimDall connects organizational information with organizational action.
+Small and mid-sized companies often manage people, contracts, tasks and communication across disconnected tools such as email, spreadsheets, cloud drives and chat apps. Important obligations and deadlines can therefore remain buried in documents with no clear owner or follow-up.
 
-For example:
-
-```text
-Contract Uploaded
-       ↓
-AI analyzes the document
-       ↓
-Important dates & obligations identified
-       ↓
-Responsible person / department identified
-       ↓
-Task created
-       ↓
-Reminder / notification sent
-       ↓
-Dashboard updated
-       ↓
-Management gets organizational visibility
-```
-
-The goal is not simply to store information, but to **understand it and turn it into useful action**.
+**HeimDall connects these workflows and uses AI to turn contract obligations into assigned, trackable actions.**
 
 ---
 
-# 🧩 Core Modules
+## 03 — Target Users
 
-### 👥 People & Organizations
-- Company workspaces
-- Employee profiles
-- Departments
-- Supervisors
-- Role-based access
+HeimDall is designed primarily for **small and medium-sized organizations**, especially:
 
-### ✅ Task Management
-- Task creation and assignment
-- Deadlines and priorities
-- Status tracking
-- Overdue detection
-- Task history
+- Startups
+- IT companies
+- Software teams
+- Agencies
+- Consulting firms
+- Service businesses
+- Small manufacturing organizations
 
-### 📄 Contract Intelligence
-- Contract upload
-- AI-powered contract understanding
-- Important date extraction
-- Obligation extraction
-- Key clause identification
-- Contract dashboard
-- Contract-to-task automation
+### Primary users inside a company
 
-### 💬 Communication
-- Direct messages
-- Company channels
-- Announcements
-- Mentions
-- Notifications
-
-### 📊 Organizational Visibility
-- Company dashboard
-- Task statistics
-- Contract status
-- Activity information
-- Basic performance metrics
-- Reports
-
-### 🤖 HeimDall AI
-- Contract analysis
-- Organizational questions
-- Context-aware assistance
-- Authorized company data retrieval
-- Future intelligent recommendations
-
----
-
-# 🏆 MVP
-
-The first version focuses on a **small but complete organizational workflow** rather than attempting to build an entire enterprise platform at once.
-
-| Feature | MVP |
+| Role | What they use HeimDall for |
 |---|---|
-| Authentication | 🚧 |
-| Company Workspace | 🚧 |
-| Roles & Permissions | 🚧 |
-| Employee Profiles | 🚧 |
-| Departments | 🚧 |
-| Task Management | 🚧 |
-| Notifications | 🚧 |
-| Contract Upload | 🚧 |
-| AI Contract Analysis | 🚧 |
-| Obligation Extraction | 🚧 |
-| Contract Dashboard | 🚧 |
-| Contract → Task Automation | 🚧 |
-| Internal Chat | 🚧 |
-| Company Channels | 🚧 |
-| Basic Performance Tracking | 🚧 |
-| Company Dashboard | 🚧 |
-| Basic Reports | 🚧 |
-| AI Assistant | 🚧 |
-
-> The status will be updated as development progresses.
+| **Employee** | Personal tasks, deadlines, profile, communication and authorized documents |
+| **Supervisor** | Assigning work, monitoring team activity and following up on deadlines |
+| **HR** | Employee information, contracts, obligations and organizational records |
+| **Admin / C-Suite** | Company-wide visibility, reports, contracts and operational health |
 
 ---
 
-# ⭐ Core MVP Workflow
+## 04 — The Core Idea
+
+Most business software stores information.
+
+**HeimDall is designed to connect information with action.**
 
 ```text
-              ┌─────────────────┐
-              │  Company Admin  │
-              └────────┬────────┘
-                       │
-                       ▼
-              Uploads Contract
-                       │
-                       ▼
-              ┌─────────────────┐
-              │   HeimDall AI   │
-              └────────┬────────┘
-                       │
-             ┌─────────┼─────────┐
-             ▼         ▼         ▼
-          Dates    Obligations  Clauses
-             │         │         │
-             └─────────┼─────────┘
-                       ▼
-               Action Required
-                       │
-                       ▼
-                 Task Created
-                       │
-                       ▼
-                  Notification
-                       │
-                       ▼
-                Employee Action
-                       │
-                       ▼
-                Task Completion
-                       │
-                       ▼
-                Company Dashboard
+                    COMPANY INFORMATION
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+      Contracts          People            Work
+          │                │                │
+          └────────────────┼────────────────┘
+                           ▼
+                    HEIMDALL AI
+                           │
+                           ▼
+                 Understand & Extract
+                           │
+                           ▼
+                   Obligation / Event
+                           │
+                           ▼
+                    Assigned Task
+                           │
+                           ▼
+                     Notification
+                           │
+                           ▼
+                    Action Completed
+                           │
+                           ▼
+                  Company Dashboard
 ```
 
-This workflow is the heart of the MVP: **Contract → AI → Obligation → Task → Notification → Action → Visibility.**
+### The hero workflow
+
+**Contract → AI Analysis → Obligation → Task → Reminder → Completion → Dashboard**
+
+This workflow is the central proof of concept for the MVP.
 
 ---
 
-# 🤖 AI & Contract Intelligence
+## 05 — MVP Scope
 
-Contract intelligence is one of the core features of HeimDall.
+The **Journey to Mastery MVP** focuses on a complete, demonstrable company workflow rather than attempting to build every enterprise feature at once.
 
-Users can upload documents such as:
+### Core MVP modules
 
-- Employment agreements
-- Vendor agreements
-- Service agreements
-- NDAs
-- Partnership agreements
+- 🔐 Company registration, login and role-based access
+- 🏢 Company workspace
+- 👤 Employee profiles and departments
+- ✅ Task creation, assignment, priority and deadlines
+- 📄 Contract upload and AI-powered contract understanding
+- 🧠 Extraction of key dates, parties, obligations and renewal/expiry terms
+- 🔗 Contract-to-task automation
+- 🔔 In-app reminders and notifications
+- 💬 Company and department channels
+- 💬 Direct messaging
+- 📊 Company dashboard
+- 📈 Basic operational reports
 
-The AI layer is designed to identify:
+### MVP success condition
+
+A user should be able to upload a contract, have HeimDall identify an actionable obligation, convert it into a task for the appropriate person, receive a reminder and see the resulting activity reflected on the company dashboard.
+
+---
+
+## 06 — Contract Intelligence
+
+Contract intelligence is HeimDall's primary AI-powered differentiator in the MVP.
+
+A user can upload a business document such as an employment agreement, NDA, vendor agreement or service contract.
+
+HeimDall is designed to identify information such as:
 
 ```text
 Contract Type
 Parties
 Start Date
-End Date
+Expiry / Renewal Date
 Notice Period
-Renewal Conditions
 Termination Conditions
 Responsibilities
 Obligations
@@ -222,246 +153,455 @@ Important Deadlines
 CONTRACT ANALYSIS
 ────────────────────────────
 
-Contract Type:
-Employment Agreement
-
-Start Date:
-01/01/2026
-
-End Date:
-31/12/2026
-
-Notice Period:
-60 days
+Contract Type:     Service Agreement
+Parties:           Company A + Vendor B
+Expiry Date:       31 Dec 2026
+Notice Period:     30 Days
 
 KEY OBLIGATIONS
-✓ Required reports must be submitted
-✓ Required company resources must be provided
-✓ Confidentiality requirements apply
+✓ Monthly service report required
+✓ Payment due within agreed period
+✓ Renewal review required before expiry
 
-ATTENTION
-⚠ Contract renewal review required
+ACTION
+→ Create task for responsible manager
+→ Set deadline
+→ Notify assignee
 ```
 
-The important part is not only understanding the document. Extracted information can become an **actionable organizational workflow**.
+The objective is not simply to summarize a PDF.
+
+> **HeimDall turns a clause buried in a document into a visible organizational action.**
 
 ---
 
-# 🧠 HeimDall AI Assistant
+## 07 — Company Workspace
 
-The AI assistant is intended to answer questions using information the user is authorized to access.
+HeimDall is envisioned as a connected workspace for the entire organization.
 
-**Employee:**
-> What tasks do I have due this week?
+### People
 
-**Supervisor:**
-> Which tasks assigned to my team are overdue?
+- Employee profiles
+- Departments
+- Supervisors
+- Roles and permissions
 
-**HR:**
-> Which contracts expire within 60 days?
+### Work
 
-**Management:**
-> What requires attention in the organization this week?
+- Tasks
+- Priorities
+- Deadlines
+- Status tracking
+- Task history
 
-### Privacy Principle
+### Contracts
 
-> **If a user is not authorized to access information, the AI should not reveal that information either.**
+- Contract repository
+- AI analysis
+- Obligations
+- Renewal / expiry tracking
+- Contract dashboard
 
----
+### Communication
 
-# 👤 User Roles
+- Company channels
+- Department channels
+- Direct messages
+- Mentions
+- Notifications
 
-### Employee
-- View personal profile
-- View assigned tasks
-- Update task status
-- Access authorized documents
-- Communicate through channels
-- Receive notifications
+### Visibility
 
-### Supervisor
-- Manage team tasks
-- Assign tasks
-- Monitor team activity
-- View team-level information
-- Review basic performance metrics
-
-### HR / Administrator
-- Manage employees
-- Manage contracts
-- Manage documents
-- View organizational information
-- Generate reports
-
-### Management / C-Suite
-- View company-wide dashboard
-- View important alerts
-- Review organizational reports
-- Monitor contracts and pending actions
+- Company dashboard
+- Department activity
+- Task completion
+- Overdue work
+- Contract statistics
 
 ---
 
-# 📊 Company Dashboard
+## 08 — Dashboard Concept
 
-The dashboard provides a high-level view of organizational activity.
+The company dashboard gives authorized management users a quick view of what needs attention.
 
 ```text
-┌──────────────────────────────────────────┐
-│              HEIMDALL                    │
-│        Company Operations                │
-├──────────────────────────────────────────┤
-│ Employees       Tasks        Contracts   │
-│    42            126             37     │
-│                                          │
-│ Overdue         Expiring       Pending   │
-│   9 Tasks       4 Contracts      5      │
-├──────────────────────────────────────────┤
-│ ⚠ ATTENTION REQUIRED                    │
-│ • 3 contracts expire within 30 days     │
-│ • 9 tasks are overdue                   │
-│ • 2 reviews require attention           │
-└──────────────────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│                    HEIMDALL                     │
+│              COMPANY OVERVIEW                   │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│  EMPLOYEES        TASKS          CONTRACTS      │
+│     52             126              37         │
+│                                                 │
+│  OVERDUE          EXPIRING         PENDING      │
+│   09 Tasks       04 Contracts       05         │
+│                                                 │
+├─────────────────────────────────────────────────┤
+│  ⚠ ATTENTION REQUIRED                          │
+│                                                 │
+│  • 3 contracts require review                  │
+│  • 9 tasks are overdue                         │
+│  • 5 actions are awaiting completion           │
+│                                                 │
+└─────────────────────────────────────────────────┘
 ```
 
 ---
 
-# 💬 Communication
+## 09 — Design & Product Sketches
 
-HeimDall includes internal communication as part of the organizational workspace.
+The initial product thinking started from a simple set of organizational workflows: contract understanding, task assignment, reminders, employee profiles, contract dashboards, stakeholders, communication and reporting.
 
-### Channels
+### Initial feature sketch
 
-```text
-#general
-#announcements
-#engineering
-#marketing
-#projects
-```
+<p align="center">
+  <img src="./assets/initial-feature-sketch.jpg" alt="Initial HeimDall feature sketch" width="520" />
+</p>
 
-### Direct Messages
+### Product requirements
 
-```text
-Employee ↔ Employee
-Employee ↔ Supervisor
-```
+<p align="center">
+  <img src="./assets/project-requirements.jpg" alt="HeimDall project requirements" width="520" />
+</p>
 
-The MVP focuses on essential communication rather than attempting to replicate a full-scale messaging platform.
+### Miro / Excalidraw
 
----
+**Miro board:** `Add your Miro board link here`
 
-# 📈 Performance Tracking
-
-The MVP uses objective work activity rather than arbitrary employee scoring.
-
-```text
-Tasks Assigned       28
-Tasks Completed      24
-Completed On Time    21
-Overdue               3
-
-Completion Rate     85.7%
-On-Time Rate        87.5%
-```
-
-These metrics are derived from actual task activity.
+**UI sketch:** The repository assets above document the current early-stage product thinking. The final UI screens will be linked here once the Figma / Excalidraw workspace is finalized.
 
 ---
 
-# 🔐 Security & Privacy
-
-Organizational software can handle sensitive information, so security is a core product requirement.
-
-HeimDall is designed around:
-
-- Authentication
-- Role-Based Access Control (RBAC)
-- Server-side authorization
-- Secure document access
-- Input validation
-- Secure handling of secrets
-- Permission-aware AI responses
-- Audit-friendly architecture
-
-> **Access to information should be determined by organizational permissions, not simply by whether the AI can retrieve it.**
-
----
-
-# 🏗️ Architecture
-
-```text
-                         ┌──────────────┐
-                         │     USER     │
-                         └──────┬───────┘
-                                │
-                                ▼
-                       ┌─────────────────┐
-                       │    FRONTEND     │
-                       │ Dashboard       │
-                       │ Tasks           │
-                       │ Contracts       │
-                       │ Chat            │
-                       │ Reports         │
-                       └────────┬────────┘
-                                │
-                                ▼
-                       ┌─────────────────┐
-                       │    API LAYER    │
-                       │ Authentication  │
-                       │ Authorization   │
-                       │ Business Logic  │
-                       └────────┬────────┘
-                                │
-              ┌─────────────────┼─────────────────┐
-              ▼                 ▼                 ▼
-       ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-       │   DATABASE   │  │  AI SERVICE  │  │    STORAGE   │
-       │ Users        │  │ LLM          │  │ Documents    │
-       │ Tasks        │  │ RAG          │  │ Contracts    │
-       │ Contracts    │  │ Embeddings   │  │ Files        │
-       │ Messages     │  │ Analysis     │  │              │
-       └──────────────┘  └──────────────┘  └──────────────┘
-```
-
----
-
-# 🛠️ Technology
-
-The exact implementation stack may evolve during development.
+## 10 — Planned Technology Stack
 
 ### Frontend
-- HTML
-- CSS
-- JavaScript / frontend framework
-- Figma
-- Stitch
+
+- HTML5
+- CSS3
+- JavaScript
+- Figma for UI/UX design
+- Stitch for interface exploration / prototyping
 
 ### Backend
+
 - Python
 - FastAPI
+- REST APIs
 
 ### Database
+
 - PostgreSQL
 
-### AI
-- Large Language Models
+### AI Layer
+
+- Large Language Model API
 - Retrieval-Augmented Generation (RAG)
 - Embeddings
 - Document processing
-- Contract analysis
+- Contract information extraction
+- OCR for scanned documents
 
-### Development
+### Development & Collaboration
+
 - Git
 - GitHub
 - GitHub Issues
 - Pull Requests
 - Code Reviews
 
-> Technologies will be finalized as the MVP architecture is implemented.
+> The stack may evolve during implementation as the team validates the MVP architecture.
 
 ---
 
-# 📁 Project Structure
+## 11 — High-Level Architecture
+
+```text
+                         ┌──────────────────┐
+                         │      USER        │
+                         └────────┬─────────┘
+                                  │
+                                  ▼
+                         ┌──────────────────┐
+                         │    FRONTEND      │
+                         │                  │
+                         │ Dashboard        │
+                         │ Tasks            │
+                         │ Contracts        │
+                         │ Chat             │
+                         │ Reports          │
+                         └────────┬─────────┘
+                                  │ REST API
+                                  ▼
+                         ┌──────────────────┐
+                         │     FASTAPI      │
+                         │                  │
+                         │ Auth             │
+                         │ RBAC             │
+                         │ Business Logic   │
+                         │ API Endpoints    │
+                         └───────┬──────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              ▼                  ▼                  ▼
+       ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+       │ PostgreSQL  │    │  AI SERVICE │    │   STORAGE   │
+       │             │    │             │    │             │
+       │ Users       │    │ LLM         │    │ Contracts   │
+       │ Tasks       │    │ RAG         │    │ Documents   │
+       │ Contracts   │    │ Embeddings  │    │ Files       │
+       │ Messages    │    │ OCR         │    │             │
+       └─────────────┘    └─────────────┘    └─────────────┘
+```
+
+---
+
+## 12 — Security & Privacy
+
+HeimDall is intended to handle sensitive organizational information, so authorization is part of the core architecture.
+
+Key principles:
+
+- Role-Based Access Control (RBAC)
+- API-level authorization
+- Password hashing
+- Secure document access
+- Server-side permission checks
+- Environment variables for secrets
+- No API keys committed to GitHub
+- Confidential company documents protected by access rules
+- AI responses limited by the user's authorized data
+
+> **If a user cannot access a document through the application, the AI should not reveal its contents either.**
+
+---
+
+## 13 — Success Metrics
+
+The MVP will be evaluated using measurable product and technical outcomes.
+
+| Metric | MVP Target |
+|---|---|
+| Core modules working end-to-end | 100% demoable |
+| Contract → task workflow | Under 30 seconds in typical demo conditions |
+| AI contract analysis | Under 15 seconds for a typical 5–15 page text-based contract |
+| Blocking bugs at final rehearsal | 0 |
+| Core workflow | Contract → obligation → task → reminder → dashboard |
+
+The main question is simple:
+
+> **Can HeimDall reliably turn organizational information into timely action?**
+
+---
+
+## 14 — Business Model
+
+HeimDall is planned as a **freemium + B2B SaaS platform**.
+
+### Individuals — Free
+
+A limited free experience for personal productivity and basic organizational tools.
+
+### Premium Individuals
+
+Potential premium capabilities include:
+
+- AI recommendations
+- Personal AI researcher
+- Higher AI usage limits
+- Advanced insights
+- HeimDall certifications
+- Skill assessments
+
+### Companies — Paid
+
+Company workspaces are the primary B2B offering, with features such as:
+
+- Employee management
+- Task management
+- Contract intelligence
+- Documents
+- Communication
+- Organizational dashboards
+- Reports
+- Automation
+- Advanced permissions
+
+> Pricing, packaging and usage limits will be validated through future customer discovery rather than fixed during the MVP.
+
+---
+
+## 15 — Roadmap
+
+### Phase 1 — Journey to Mastery MVP
+
+- [x] Product concept
+- [x] PRD
+- [x] Initial feature planning
+- [ ] Authentication & company workspace
+- [ ] Employee profiles & departments
+- [ ] Task management
+- [ ] Notifications
+- [ ] Contract intelligence
+- [ ] Contract → task automation
+- [ ] Communication
+- [ ] Company dashboard
+- [ ] Basic reports
+
+### Phase 2 — Organizational Intelligence
+
+- [ ] HeimDall AI Assistant
+- [ ] Company knowledge search
+- [ ] Advanced RAG
+- [ ] AI recommendations
+- [ ] Smart notifications
+- [ ] Workflow automation
+- [ ] AI-generated reports
+
+### Phase 3 — People & Community
+
+- [ ] Peer feedback
+- [ ] Recognition
+- [ ] Achievement badges
+- [ ] Leaderboards
+- [ ] Community improvements
+
+### Phase 4 — Individual Growth
+
+- [ ] Personal AI researcher
+- [ ] HeimDall certifications
+- [ ] Skill assessments
+- [ ] Learning paths
+- [ ] Verified achievements
+
+### Phase 5 — Ecosystem
+
+- [ ] Google Workspace integration
+- [ ] Microsoft 365 integration
+- [ ] GitHub / GitLab integration
+- [ ] Slack / Teams integration
+- [ ] Calendar integrations
+- [ ] HR system integrations
+- [ ] Enterprise identity providers
+- [ ] Mobile application
+
+---
+
+## 16 — 4-Week Journey to Mastery Build Plan
+
+### Week 1 — Foundation
+
+**Goal:** Establish the organizational workspace.
+
+- Project setup
+- Database foundation
+- Authentication
+- Company workspace
+- Roles & permissions
+- Employee profiles
+- Initial UI
+
+### Week 2 — Operations
+
+**Goal:** Make the workspace useful for daily work.
+
+- Task management
+- Departments
+- Notifications
+- Company channels
+- Direct messaging
+- Company dashboard foundation
+
+### Week 3 — AI Hero Workflow
+
+**Goal:** Build the feature that differentiates HeimDall.
+
+- Contract upload
+- Document processing
+- AI contract analysis
+- Obligation extraction
+- Contract dashboard
+- Contract → task automation
+
+### Week 4 — Polish & Pitch
+
+**Goal:** Turn the prototype into a convincing product demonstration.
+
+- Reports
+- Permission testing
+- Error handling
+- UI refinement
+- Security checks
+- Testing
+- Deployment
+- Documentation
+- Demo rehearsal
+
+---
+
+## 17 — Team
+
+### 👨‍💻 Ankan Biswas — Tech Lead
+
+**Focus:** Backend, architecture, APIs, AI integration and engineering coordination.
+
+### 👨‍💼 Sumit Sinha — Product Manager
+
+**Focus:** Product requirements, user needs, roadmap, validation and business direction.
+
+### 🎨 Debashis Dey — Design Lead
+
+**Focus:** UI/UX, Figma/Stitch exploration, product interface and design system.
+
+### Team capabilities
+
+- Python
+- C
+- HTML
+- CSS
+- Figma
+- Stitch
+- Git
+- GitHub
+
+---
+
+## 18 — Development Workflow
+
+```text
+Product Idea
+     ↓
+GitHub Issue
+     ↓
+Feature Branch
+     ↓
+Development
+     ↓
+Testing
+     ↓
+Pull Request
+     ↓
+Code Review
+     ↓
+Merge
+     ↓
+Release
+```
+
+Example branches:
+
+```text
+feature/authentication
+feature/company-workspace
+feature/task-management
+feature/contract-analysis
+feature/ai-assistant
+feature/notifications
+feature/company-dashboard
+```
+
+---
+
+## 19 — Repository Structure
 
 ```text
 HeimDall/
@@ -491,10 +631,11 @@ HeimDall/
 │   ├── PRD.md
 │   ├── architecture.md
 │   ├── API.md
-│   ├── database.md
-│   └── roadmap.md
+│   ├── roadmap.md
+│   └── sketches/
 │
 ├── tests/
+├── assets/
 ├── .env.example
 ├── .gitignore
 └── README.md
@@ -502,283 +643,20 @@ HeimDall/
 
 ---
 
-# 🗺️ Roadmap
+## 20 — Long-Term Vision
 
-## Phase 1 — MVP: Company Operations
+HeimDall is not intended to be just another task manager or document repository.
 
-- [ ] Authentication
-- [ ] Company workspaces
-- [ ] Roles & permissions
-- [ ] Employee profiles
-- [ ] Departments
-- [ ] Task management
-- [ ] Notifications
-- [ ] Contract management
-- [ ] AI contract analysis
-- [ ] Obligation extraction
-- [ ] Contract-to-task automation
-- [ ] Internal communication
-- [ ] Company dashboard
-- [ ] Basic reports
-- [ ] AI assistant
-
-## Phase 2 — Organizational Intelligence
-
-Planned:
-
-- Advanced AI recommendations
-- Personal AI researcher
-- Company knowledge search
-- Advanced RAG
-- AI-generated reports
-- Smart notifications
-- Workflow automation
-- Calendar integration
-- Email integration
-
-## Phase 3 — Community & Recognition
-
-Planned:
-
-- Peer feedback
-- Recognition
-- Achievement badges
-- Leaderboards
-- Advanced communities
-- Knowledge sharing
-
-## Phase 4 — Employee Growth
-
-Planned:
-
-- HeimDall certifications
-- Skill assessments
-- Learning paths
-- Verified achievements
-- Company-issued certifications
-- Internal talent discovery
-
-## Phase 5 — Organizational Ecosystem
-
-Potential integrations:
-
-- Google Workspace
-- Microsoft 365
-- GitHub / GitLab
-- Slack / Microsoft Teams
-- Google Calendar
-- HR systems
-- Payroll systems
-- CRM platforms
-- Enterprise identity providers
-
----
-
-# 💰 Business Model
-
-HeimDall is envisioned as a **freemium + B2B SaaS platform**.
-
-### 👤 Individuals — Free
-
-A free tier can provide limited access to personal productivity features.
-
-### ⭐ Individual Premium
-
-Potential premium capabilities:
-
-- Higher AI usage
-- AI recommendations
-- Personal AI researcher
-- Advanced insights
-- HeimDall certifications
-- Skill assessments
-
-### 🏢 Companies — Paid
-
-Paid company workspaces can provide:
-
-- Employee management
-- Tasks
-- Contracts
-- Documents
-- Communication
-- Organizational AI
-- Reports
-- Automation
-- Advanced permissions
-
-Long-term pricing may depend on organization size, users, features, AI usage, and enterprise requirements.
-
-> Pricing will be validated through product testing and customer research.
-
----
-
-# 📅 4-Week Hackathon Plan
-
-### Week 1 — Foundation
-
-- Project setup
-- Database
-- Authentication
-- Company workspace
-- Roles
-- Employee profiles
-- Initial UI
-
-### Week 2 — Operations
-
-- Task management
-- Departments
-- Notifications
-- Channels
-- Messaging
-- Company dashboard
-
-### Week 3 — AI
-
-- Contract upload
-- Document processing
-- AI analysis
-- Obligation extraction
-- Contract dashboard
-- Contract → task automation
-- AI assistant
-
-### Week 4 — Polish
-
-- Reports
-- Permission testing
-- Error handling
-- UI refinement
-- Security checks
-- Testing
-- Deployment
-- Documentation
-- Demo preparation
-
----
-
-# 📏 Success Metrics
-
-The MVP will focus on measurable outcomes:
-
-- Successful company workspaces created
-- Employees added
-- Tasks created and completed
-- Contracts analyzed
-- Obligations extracted
-- Automated tasks generated
-- Notifications delivered
-- AI questions answered
-- Active users
-
-### Core Workflow Metric
-
-```text
-Contract Upload
-      ↓
-AI Analysis
-      ↓
-Obligation Extraction
-      ↓
-Task Generation
-      ↓
-Notification
-      ↓
-Task Completion
-```
-
-The reliability of this workflow is one of the most important MVP success indicators.
-
----
-
-# 🚧 Intentionally Out of Scope for MVP
-
-To keep the four-week build focused, these remain future features:
-
-- Payroll
-- Attendance
-- Leave management
-- Expense management
-- Recruitment
-- Advanced certification infrastructure
-- Advanced peer ratings
-- Full enterprise billing
-- Mobile applications
-- Large-scale third-party integrations
-- Advanced enterprise administration
-
-> **The goal is a small, polished and functional foundation — not a large collection of incomplete features.**
-
----
-
-# 🧑‍💻 Development Workflow
-
-```text
-Idea
- ↓
-GitHub Issue
- ↓
-Feature Branch
- ↓
-Development
- ↓
-Testing
- ↓
-Pull Request
- ↓
-Code Review
- ↓
-Merge
- ↓
-Release
-```
-
-Example branches:
-
-```text
-feature/authentication
-feature/company-workspace
-feature/task-management
-feature/contract-analysis
-feature/ai-assistant
-feature/notifications
-feature/company-dashboard
-```
-
----
-
-# 👥 Team
-
-HeimDall is being developed by a **3-member team** with experience in:
-
-- Python
-- C
-- HTML
-- CSS
-- Figma
-- Stitch
-- Git
-- GitHub
-
-The team is approaching HeimDall as both a software engineering project and the foundation for a potential real-world product.
-
----
-
-# 🌱 Long-Term Vision
-
-We don't want HeimDall to remain just a hackathon project.
-
-The long-term vision is to create a platform where an organization can manage:
+The long-term vision is to build a connected organizational operating layer where:
 
 ```text
 People
   +
 Work
   +
-Knowledge
+Contracts
   +
-Documents
+Knowledge
   +
 Communication
   +
@@ -787,32 +665,32 @@ AI
 Organizational Intelligence
 ```
 
-in one connected environment.
+work together in one platform.
 
-> ## To become the digital operating platform for organizations.
+### Our vision
 
----
-
-# 🛡️ Why "HeimDall"?
-
-Heimdall in Norse mythology is associated with vigilance and awareness.
-
-That inspired our product philosophy:
-
-> **HeimDall helps organizations see what matters, understand what is happening, and act at the right time.**
-
-The product is about **organizational visibility**, not employee surveillance.
+> ## **Make organizations easier to run, easier to understand and harder to lose track of.**
 
 ---
 
-# ⭐ HeimDall
+## 🛡️ Why the name HeimDall?
 
-### The Digital Operating Platform for Organizations
+The name is inspired by **Heimdall**, the watchful guardian from Norse mythology.
 
-**Observe. Understand. Act.**
+The metaphor fits the product: HeimDall is designed to help an organization stay aware of its people, responsibilities, documents, deadlines and operational signals.
 
-Built as a **4-week MVP** with a long-term vision of becoming a real organizational SaaS platform.
+**Stay Ahead.**
 
-<p align="center">
-  <strong>🛡️ HeimDall — Observe. Understand. Act.</strong>
-</p>
+---
+
+<div align="center">
+
+  ## 🛡️ HeimDall
+
+  **Stay Ahead.**
+
+  *The digital operating platform for organizations.*
+
+  <sub>Built for the Journey to Mastery • MVP Release • 2026</sub>
+
+</div>

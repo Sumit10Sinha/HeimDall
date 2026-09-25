@@ -17,19 +17,19 @@ Companies often manage important information across spreadsheets, chat messages,
 
 <!-- Excalidraw only. Link the live board AND embed/link a static export as backup. -->
 
-![Sketch](./docs/sketch.png)
+![Sketch](./HeimDall/sketchs)
 
-[View live board (Excalidraw)](YOUR_EXCALIDRAW_BOARD_LINK)
+[View live board (Excalidraw)](https://excalidraw.com/#json=wLM3da9J0HQDwyx_gAEGR,qaLlLSxaOpqr-dwqwuVeyQ)
 
 ---
 
 ## Documents
 
 - [Product Requirements](./docs/PRD.md)
-- [Architecture](./docs/ARCHITECTURE.md)
-- [API Spec](./docs/API_SPEC.md)
-- [Roadmap](./docs/ROADMAP.md)
-- [Requirements](./docs/REQUIREMENTS.md)
+- [Architecture](./HeimDall/Architecture.md)
+- [API Spec](./HeimDall/HeimDall_API_Spec.md)
+- [Roadmap](./HeimDall/HeimDall_Roadmap.md)
+- [Requirements](./HeimDall/HeimDall_Requirements.md)
 
 ---
 

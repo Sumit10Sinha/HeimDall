@@ -17,7 +17,7 @@ Companies often manage important information across spreadsheets, chat messages,
 
 <!-- Excalidraw only. Link the live board AND embed/link a static export as backup. -->
 
-![Sketch](./HeimDall/sketchs)
+![Sketch](./sketches)
 
 [View live board (Excalidraw)](https://excalidraw.com/#json=wLM3da9J0HQDwyx_gAEGR,qaLlLSxaOpqr-dwqwuVeyQ)
 

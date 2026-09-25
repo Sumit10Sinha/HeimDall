@@ -809,9 +809,3 @@ Reports
 ```
 
 into a unified company workspace.
-
-<p align="center">
-
-** Heimdall - Stay Ahead**
-
-</p>

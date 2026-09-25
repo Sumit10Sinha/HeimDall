@@ -1,14 +1,5 @@
 # HeimDall - Software Requirements Specification
 
-> **Product:** HeimDall  
-> **Tagline:** Stay Ahead  
-> **Platform:** Web Application  
-> **Project:** Journey to Mastery  
-> **Document:** Requirements Specification  
-> **MVP Timeline:** 4 Weeks  
-> **Status:** MVP Planning
-
----
 
 ## 1. Purpose
 

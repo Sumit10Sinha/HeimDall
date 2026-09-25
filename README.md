@@ -3,13 +3,7 @@
 
   # HeimDall
 
-  ### Stay Ahead.
-
   **The digital operating platform for organizations.**
-
-  <p>
-    <em>Observe. Understand. Act.</em>
-  </p>
 
   <p>
     <img src="https://img.shields.io/badge/Journey%20to%20Mastery-2026-0b63ce?style=for-the-badge" alt="Journey to Mastery" />
@@ -677,15 +671,11 @@ The name is inspired by **Heimdall**, the watchful guardian from Norse mythology
 
 The metaphor fits the product: HeimDall is designed to help an organization stay aware of its people, responsibilities, documents, deadlines and operational signals.
 
-**Stay Ahead.**
-
 ---
 
 <div align="center">
 
   ## <img src="./assets/heimdall-logo.png" alt="HeimDall Logo" width="30" /> HeimDall
-
-  **Stay Ahead.**
 
   *The digital operating platform for organizations.*
 

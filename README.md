@@ -25,10 +25,10 @@ Companies often manage important information across spreadsheets, chat messages,
 
 ## Documents
 
-- [Product Requirements](./docs/PRD.md)
-- [Architecture](./HeimDall/Architecture.md)
-- [API Spec](./HeimDall/HeimDall_API_Spec.md)
-- [Roadmap](./HeimDall/HeimDall_Roadmap.md)
+- [Product Requirements](./PRD.md)
+- [Architecture](./Architecture.md)
+- [API Spec](./HeimDall_API_Spec.md)
+- [Roadmap](./HeimDall_Roadmap.md)
 - [Requirements](./HeimDall/HeimDall_Requirements.md)
 
 ---

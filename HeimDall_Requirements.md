@@ -1242,11 +1242,3 @@ Important Information
 ```
 
 The system must remain **human-controlled**: AI assists with understanding, recommendations, retrieval, and workflow support, while consequential organizational and legal decisions remain with authorized people.
-
----
-
-<p align="center">
-
-**🛡️ HeimDall — Stay Ahead**
-
-</p>

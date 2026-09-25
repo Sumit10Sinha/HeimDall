@@ -763,8 +763,4 @@ This document describes the **planned architecture** for HeimDall. It establishe
 - Deployment direction
 
 The database schema is currently described as a **rough data model**, not a finalized schema.
-
----
-
-## HeimDall
 </div>

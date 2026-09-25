@@ -21,13 +21,13 @@
 
 ---
 
-## 01 — One-Line Idea
+## 01 - One-Line Idea
 
 > **HeimDall is an AI-powered company operating platform that connects people, tasks, contracts, communication and organizational insights in one workspace — turning important information into actions before they are missed.**
 
 ---
 
-## 02 — Problem Statement
+## 02 - Problem Statement
 
 Small and mid-sized companies often manage people, contracts, tasks and communication across disconnected tools such as email, spreadsheets, cloud drives and chat apps. Important obligations and deadlines can therefore remain buried in documents with no clear owner or follow-up.
 
@@ -35,7 +35,7 @@ Small and mid-sized companies often manage people, contracts, tasks and communic
 
 ---
 
-## 03 — Target Users
+## 03 - Target Users
 
 HeimDall is designed primarily for **small and medium-sized organizations**, especially:
 
@@ -127,7 +127,7 @@ A user should be able to upload a contract, have HeimDall identify an actionable
 
 ---
 
-## 06 — Contract Intelligence
+## 06 - Contract Intelligence
 
 Contract intelligence is HeimDall's primary AI-powered differentiator in the MVP.
 
@@ -175,7 +175,7 @@ The objective is not simply to summarize a PDF.
 
 ---
 
-## 07 — Company Workspace
+## 07 - Company Workspace
 
 HeimDall is envisioned as a connected workspace for the entire organization.
 
@@ -199,7 +199,7 @@ HeimDall is envisioned as a connected workspace for the entire organization.
 - Contract repository
 - AI analysis
 - Obligations
-- Renewal / expiry tracking
+- Renewal/expiry tracking
 - Contract dashboard
 
 ### Communication
@@ -220,7 +220,7 @@ HeimDall is envisioned as a connected workspace for the entire organization.
 
 ---
 
-## 08 — Dashboard Concept
+## 08 - Dashboard Concept
 
 The company dashboard gives authorized management users a quick view of what needs attention.
 
@@ -248,7 +248,7 @@ The company dashboard gives authorized management users a quick view of what nee
 
 ---
 
-## 09 — Design & Product Sketches
+## 09 - Design & Product Sketches
 
 The initial product thinking started from a simple set of organizational workflows: contract understanding, task assignment, reminders, employee profiles, contract dashboards, stakeholders, communication and reporting.
 
@@ -272,7 +272,7 @@ The initial product thinking started from a simple set of organizational workflo
 
 ---
 
-## 10 — Planned Technology Stack
+## 10 - Planned Technology Stack
 
 ### Frontend
 
@@ -280,7 +280,6 @@ The initial product thinking started from a simple set of organizational workflo
 - CSS3
 - JavaScript
 - Figma for UI/UX design
-- Stitch for interface exploration / prototyping
 
 ### Backend
 
@@ -313,7 +312,7 @@ The initial product thinking started from a simple set of organizational workflo
 
 ---
 
-## 11 — High-Level Architecture
+## 11 - High-Level Architecture
 
 ```text
                          ┌──────────────────┐
@@ -355,7 +354,7 @@ The initial product thinking started from a simple set of organizational workflo
 
 ---
 
-## 12 — Security & Privacy
+## 12 - Security & Privacy
 
 HeimDall is intended to handle sensitive organizational information, so authorization is part of the core architecture.
 
@@ -375,7 +374,7 @@ Key principles:
 
 ---
 
-## 13 — Success Metrics
+## 13 - Success Metrics
 
 The MVP will be evaluated using measurable product and technical outcomes.
 
@@ -393,11 +392,11 @@ The main question is simple:
 
 ---
 
-## 14 — Business Model
+## 14 - Business Model
 
 HeimDall is planned as a **freemium + B2B SaaS platform**.
 
-### Individuals — Free
+### Individuals - Free
 
 A limited free experience for personal productivity and basic organizational tools.
 
@@ -412,7 +411,7 @@ Potential premium capabilities include:
 - HeimDall certifications
 - Skill assessments
 
-### Companies — Paid
+### Companies - Paid
 
 Company workspaces are the primary B2B offering, with features such as:
 
@@ -430,9 +429,9 @@ Company workspaces are the primary B2B offering, with features such as:
 
 ---
 
-## 15 — Roadmap
+## 15 - Roadmap
 
-### Phase 1 — Journey to Mastery MVP
+### Phase 1 - Journey to Mastery MVP
 
 - [x] Product concept
 - [x] PRD
@@ -447,7 +446,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - [ ] Company dashboard
 - [ ] Basic reports
 
-### Phase 2 — Organizational Intelligence
+### Phase 2 - Organizational Intelligence
 
 - [ ] HeimDall AI Assistant
 - [ ] Company knowledge search
@@ -457,7 +456,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - [ ] Workflow automation
 - [ ] AI-generated reports
 
-### Phase 3 — People & Community
+### Phase 3 - People & Community
 
 - [ ] Peer feedback
 - [ ] Recognition
@@ -465,7 +464,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - [ ] Leaderboards
 - [ ] Community improvements
 
-### Phase 4 — Individual Growth
+### Phase 4 - Individual Growth
 
 - [ ] Personal AI researcher
 - [ ] HeimDall certifications
@@ -473,7 +472,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - [ ] Learning paths
 - [ ] Verified achievements
 
-### Phase 5 — Ecosystem
+### Phase 5 - Ecosystem
 
 - [ ] Google Workspace integration
 - [ ] Microsoft 365 integration
@@ -486,9 +485,9 @@ Company workspaces are the primary B2B offering, with features such as:
 
 ---
 
-## 16 — 4-Week Journey to Mastery Build Plan
+## 16 - 4-Week Journey to Mastery Build Plan
 
-### Week 1 — Foundation
+### Week 1 - Foundation
 
 **Goal:** Establish the organizational workspace.
 
@@ -500,7 +499,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - Employee profiles
 - Initial UI
 
-### Week 2 — Operations
+### Week 2 - Operations
 
 **Goal:** Make the workspace useful for daily work.
 
@@ -511,7 +510,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - Direct messaging
 - Company dashboard foundation
 
-### Week 3 — AI Hero Workflow
+### Week 3 - AI Hero Workflow
 
 **Goal:** Build the feature that differentiates HeimDall.
 
@@ -522,7 +521,7 @@ Company workspaces are the primary B2B offering, with features such as:
 - Contract dashboard
 - Contract → task automation
 
-### Week 4 — Polish & Pitch
+### Week 4 - Polish & Pitch
 
 **Goal:** Turn the prototype into a convincing product demonstration.
 
@@ -538,17 +537,17 @@ Company workspaces are the primary B2B offering, with features such as:
 
 ---
 
-## 17 — Team
+## 17 - Team
 
-### 👨‍💻 Ankan Biswas — Tech Lead
+### 👨‍💻 Ankan Biswas - Tech Lead
 
 **Focus:** Backend, architecture, APIs, AI integration and engineering coordination.
 
-### 👨‍💼 Sumit Sinha — Product Manager
+### 👨‍💼 Sumit Sinha - Product Manager
 
 **Focus:** Product requirements, user needs, roadmap, validation and business direction.
 
-### 🎨 Debashis Dey — Design Lead
+### 🎨 Debashis Dey - Design Lead
 
 **Focus:** UI/UX, Figma/Stitch exploration, product interface and design system.
 
@@ -559,13 +558,12 @@ Company workspaces are the primary B2B offering, with features such as:
 - HTML
 - CSS
 - Figma
-- Stitch
 - Git
 - GitHub
 
 ---
 
-## 18 — Development Workflow
+## 18 - Development Workflow
 
 ```text
 Product Idea
@@ -601,7 +599,7 @@ feature/company-dashboard
 
 ---
 
-## 19 — Repository Structure
+## 19 - Repository Structure
 
 ```text
 HeimDall/
@@ -643,7 +641,7 @@ HeimDall/
 
 ---
 
-## 20 — Long-Term Vision
+## 20 - Long-Term Vision
 
 HeimDall is not intended to be just another task manager or document repository.
 
@@ -685,7 +683,7 @@ The metaphor fits the product: HeimDall is designed to help an organization stay
 
 <div align="center">
 
-  ## 🛡️ HeimDall
+  ## <img src="./assets/heimdall-logo.png" alt="HeimDall Logo" width="30" /> HeimDall
 
   **Stay Ahead.**
 

@@ -1,0 +1,78 @@
+{
+  "users": [
+    { "id": "u1", "name": "Sumit Sinha", "role": "executive", "department": "C-Suite", "email": "sumit@heimdall.io", "tasksCount": 1 },
+    { "id": "u2", "name": "Debasish Dey", "role": "manager", "department": "Engineering", "email": "debasish@heimdall.io", "tasksCount": 8 },
+    { "id": "u3", "name": "Ankan Biswas", "role": "hr", "department": "HR & People", "email": "ankan@heimdall.io", "tasksCount": 2 },
+    { "id": "u4", "name": "Priya Sharma", "role": "employee", "department": "Engineering", "email": "priya@heimdall.io", "tasksCount": 3 }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Finalize Q3 Onboarding Flow v2.1",
+      "projectName": "Project Midgard",
+      "assignee": "Priya Sharma",
+      "role": "employee",
+      "priority": "High",
+      "status": "To Do",
+      "dueDate": "2026-10-05"
+    },
+    {
+      "id": "t2",
+      "title": "Update Component Library",
+      "projectName": "Project Midgard",
+      "assignee": "Priya Sharma",
+      "role": "employee",
+      "priority": "Medium",
+      "status": "In Progress",
+      "dueDate": "2026-10-09"
+    },
+    {
+      "id": "t3",
+      "title": "Prepare for Q4 Strategy Deck",
+      "projectName": "Bifrost API",
+      "assignee": "Sumit Sinha",
+      "role": "executive",
+      "priority": "High",
+      "status": "Completed",
+      "dueDate": "2026-10-14"
+    },
+    {
+      "id": "t4",
+      "title": "Asgard Mockups Review",
+      "projectName": "Asgard Refactor",
+      "assignee": "Debasish Dey",
+      "role": "manager",
+      "priority": "High",
+      "status": "Blocked",
+      "dueDate": "2026-10-02"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "c1",
+      "title": "Midgard Corp MSA",
+      "partyA": "HeimDall Inc.",
+      "partyB": "Midgard Corp",
+      "status": "Active",
+      "expiryDate": "2026-12-15",
+      "riskClause": "Clause 7.2: Uncapped Mutual Indemnity"
+    },
+    {
+      "id": "c2",
+      "title": "Salesforce Integration SLA",
+      "partyA": "HeimDall Inc.",
+      "partyB": "Salesforce Inc",
+      "status": "Expiring Soon",
+      "expiryDate": "2026-10-18",
+      "riskClause": "Notice period: 14 business days"
+    }
+  ],
+  "projects": [
+    { "id": "p1", "name": "Project Midgard Design System", "status": "On Track", "progress": 75, "lead": "Debasish Dey" },
+    { "id": "p2", "name": "Bifrost API Integration", "status": "Delayed", "progress": 40, "lead": "Sumit Sinha" }
+  ],
+  "announcements": [
+    { "id": "a1", "title": "Q3 Company All-Hands & Product Review", "date": "Oct 1, 2026", "author": "Sumit Sinha" },
+    { "id": "a2", "title": "Health Benefits & Compliance Renewal Window", "date": "Sep 28, 2026", "author": "Ankan Biswas" }
+  ]
+}

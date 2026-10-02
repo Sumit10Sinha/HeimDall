@@ -1,16 +1,17 @@
 {
   "users": [
-    { "id": "u1", "name": "Sumit Sinha", "role": "executive", "department": "C-Suite", "email": "sumit@heimdall.io", "tasksCount": 1 },
-    { "id": "u2", "name": "Debasish Dey", "role": "manager", "department": "Engineering", "email": "debasish@heimdall.io", "tasksCount": 8 },
-    { "id": "u3", "name": "Ankan Biswas", "role": "hr", "department": "HR & People", "email": "ankan@heimdall.io", "tasksCount": 2 },
-    { "id": "u4", "name": "Priya Sharma", "role": "employee", "department": "Engineering", "email": "priya@heimdall.io", "tasksCount": 3 }
+    { "id": "u1", "name": "Sumit Sinha", "role": "executive", "department": "C-Suite", "email": "sumit@heimdall.io", "tasksCount": 1, "status": "Active" },
+    { "id": "u2", "name": "Debasish Dey", "role": "manager", "department": "Engineering", "email": "debasish@heimdall.io", "tasksCount": 8, "status": "Active" },
+    { "id": "u3", "name": "Ankan Biswas", "role": "hr", "department": "HR & People", "email": "ankan@heimdall.io", "tasksCount": 2, "status": "Active" },
+    { "id": "u4", "name": "Swapnil Bej", "role": "employee", "department": "Engineering", "email": "swapnil@heimdall.io", "tasksCount": 3, "status": "Active" },
+    { "id": "u5", "name": "Anamitra Kundu", "role": "employee", "department": "Design", "email": "anamitra@heimdall.io", "tasksCount": 1, "status": "At Leave" }
   ],
   "tasks": [
     {
       "id": "t1",
       "title": "Finalize Q3 Onboarding Flow v2.1",
       "projectName": "Project Midgard",
-      "assignee": "Priya Sharma",
+      "assignee": "Swapnil Bej",
       "role": "employee",
       "priority": "High",
       "status": "To Do",
@@ -20,7 +21,7 @@
       "id": "t2",
       "title": "Update Component Library",
       "projectName": "Project Midgard",
-      "assignee": "Priya Sharma",
+      "assignee": "Swapnil Bej",
       "role": "employee",
       "priority": "Medium",
       "status": "In Progress",
@@ -45,6 +46,116 @@
       "priority": "High",
       "status": "Blocked",
       "dueDate": "2026-10-02"
+    },
+    {
+      "id": "t5",
+      "title": "HR Onboarding Docs",
+      "projectName": "HR Portal",
+      "assignee": "Ankan Biswas",
+      "role": "hr",
+      "priority": "Medium",
+      "status": "Completed",
+      "dueDate": "2026-10-03"
+    },
+    {
+      "id": "t6",
+      "title": "API Rate Limiting",
+      "projectName": "Bifrost API",
+      "assignee": "Swapnil Bej",
+      "role": "employee",
+      "priority": "High",
+      "status": "Completed",
+      "dueDate": "2026-10-04"
+    },
+    {
+      "id": "t7",
+      "title": "Design System Audit",
+      "projectName": "Project Midgard",
+      "assignee": "Anamitra Kundu",
+      "role": "employee",
+      "priority": "Medium",
+      "status": "Completed",
+      "dueDate": "2026-10-05"
+    },
+    {
+      "id": "t8",
+      "title": "Security Compliance Check",
+      "projectName": "Heimdall Core",
+      "assignee": "Debasish Dey",
+      "role": "manager",
+      "priority": "Critical",
+      "status": "Completed",
+      "dueDate": "2026-10-06"
+    },
+    {
+      "id": "t9",
+      "title": "Fix Sidebar Layout Bug",
+      "projectName": "Asgard Refactor",
+      "assignee": "Swapnil Bej",
+      "role": "employee",
+      "priority": "Medium",
+      "status": "Completed",
+      "dueDate": "2026-10-07"
+    },
+    {
+      "id": "t10",
+      "title": "Executive Summary Draft",
+      "projectName": "Heimdall Core",
+      "assignee": "Sumit Sinha",
+      "role": "executive",
+      "priority": "High",
+      "status": "To Do",
+      "dueDate": "2026-10-10"
+    },
+    {
+      "id": "t11",
+      "title": "Employee Feedback Survey",
+      "projectName": "HR Portal",
+      "assignee": "Ankan Biswas",
+      "role": "hr",
+      "priority": "Low",
+      "status": "To Do",
+      "dueDate": "2026-10-11"
+    },
+    {
+      "id": "t12",
+      "title": "Database Optimization",
+      "projectName": "Bifrost API",
+      "assignee": "Debasish Dey",
+      "role": "manager",
+      "priority": "High",
+      "status": "In Progress",
+      "dueDate": "2026-10-12"
+    },
+    {
+      "id": "t13",
+      "title": "Dark Mode Implementation",
+      "projectName": "Project Midgard",
+      "assignee": "Anamitra Kundu",
+      "role": "employee",
+      "priority": "Medium",
+      "status": "In Progress",
+      "dueDate": "2026-10-13"
+    },
+    {
+      "id": "t14",
+      "title": "Client Meeting Prep",
+      "projectName": "Heimdall Core",
+      "assignee": "Sumit Sinha",
+      "role": "executive",
+      "priority": "High",
+      "status": "In Progress",
+      "dueDate": "2026-10-15"
+    },
+    {
+      "id": "t15",
+      "title": "Third-Party API Outage",
+      "projectName": "Bifrost API",
+      "assignee": "Swapnil Bej",
+      "role": "employee",
+      "priority": "Critical",
+      "status": "Blocked",
+      "dueDate": "2026-10-16"
     }
   ],
   "contracts": [
@@ -68,8 +179,8 @@
     }
   ],
   "projects": [
-    { "id": "p1", "name": "Project Midgard Design System", "status": "On Track", "progress": 75, "lead": "Debasish Dey" },
-    { "id": "p2", "name": "Bifrost API Integration", "status": "Delayed", "progress": 40, "lead": "Sumit Sinha" }
+    { "id": "p1", "name": "Project Midgard Design System", "status": "On Track", "progress": 75, "lead": "Anamitra Kundu" },
+    { "id": "p2", "name": "Bifrost API Integration", "status": "Delayed", "progress": 40, "lead": "Swapnil Bej" }
   ],
   "announcements": [
     { "id": "a1", "title": "Q3 Company All-Hands & Product Review", "date": "Oct 1, 2026", "author": "Sumit Sinha" },

@@ -13,10 +13,11 @@ export default function HomePage() {
   const [hrSearchQuery, setHrSearchQuery] = useState("");
 
   const allEmployees = [
-    { name: "Priya Sharma", role: "Employee", dept: "Engineering", status: "Active" },
+    { name: "Swapnil Bej", role: "Employee", dept: "Engineering", status: "Active" },
     { name: "Debasish Dey", role: "Manager", dept: "Engineering", status: "Active" },
     { name: "Sumit Sinha", role: "Executive", dept: "C-Suite", status: "Active" },
-    { name: "Ankan Biswas", role: "HR", dept: "HR & People", status: "At Leave" }
+    { name: "Ankan Biswas", role: "HR", dept: "HR & People", status: "Active" },
+    { name: "Anamitra Kundu", role: "Employee", dept: "Design", status: "At Leave" }
   ];
 
   const filteredEmployees = allEmployees.filter(emp => 
@@ -278,7 +279,7 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-3 gap-4 text-center mb-6 border-b border-slate-300 dark:border-slate-700 pb-4 transition-colors duration-300">
                 <div><div className="text-base text-slate-500 font-bold">Total</div><div className="text-xl font-bold">{allEmployees.length}</div></div>
-                <div className="border-l border-r border-slate-300 dark:border-slate-700"><div className="text-base text-slate-500 font-bold">Active</div><div className="text-xl font-bold">3</div></div>
+                <div className="border-l border-r border-slate-300 dark:border-slate-700"><div className="text-base text-slate-500 font-bold">Active</div><div className="text-xl font-bold">4</div></div>
                 <div><div className="text-base text-slate-500 font-bold">At Leave</div><div className="text-xl font-bold">1</div></div>
               </div>
               

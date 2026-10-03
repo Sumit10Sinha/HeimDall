@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} font-sans text-base antialiased transition-colors duration-200`}>
+      <body className={`${plusJakartaSans.variable} font-sans text-base antialiased transition-colors duration-200 bg-white dark:bg-[#202124]`}>
         <WorkspaceProvider>
           {children}
         </WorkspaceProvider>

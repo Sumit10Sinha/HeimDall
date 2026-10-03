@@ -14,6 +14,13 @@
   }
 }
 
+/* Override Next.js default dark backgrounds if they exist */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #202124;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }

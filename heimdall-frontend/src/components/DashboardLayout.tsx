@@ -25,10 +25,10 @@ export default function DashboardLayout({ children, activeNav }: Props) {
   navItems.push("Reports", "AI Assistant", "Settings");
 
   return (
-    <div className="flex h-screen w-full overflow-hidden bg-white dark:bg-black text-slate-900 dark:text-slate-100 font-sans transition-all duration-300 ease-in-out relative">
+    <div className="flex h-screen w-full overflow-hidden bg-white dark:bg-[#202124] text-slate-900 dark:text-slate-100 font-sans transition-all duration-300 ease-in-out relative">
       
       {/* 1. MOBILE TOP NAVIGATION BAR (Hamburger Menu) */}
-      <div className="md:hidden flex items-center justify-between bg-slate-50 dark:bg-[#0a0a0a] border-b border-slate-300 dark:border-slate-800 p-4 absolute top-0 w-full z-40">
+      <div className="md:hidden flex items-center justify-between bg-slate-50 dark:bg-[#2f3033] border-b border-slate-300 dark:border-slate-800 p-4 absolute top-0 w-full z-40 transition-colors duration-300">
         <div className="flex items-center space-x-2">
           <img src="/logo.png" alt="HeimDall Logo" className="w-8 h-8 object-contain" />
           <span className="font-bold tracking-wider text-lg leading-none">HEIMDALL</span>
@@ -49,7 +49,7 @@ export default function DashboardLayout({ children, activeNav }: Props) {
       )}
 
       {/* 3. RESPONSIVE SIDEBAR (Fixed Drawer on Mobile, Static on Desktop) */}
-      <aside className={`fixed inset-y-0 left-0 z-50 w-64 border-r border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-[#0a0a0a] flex flex-col justify-between transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <aside className={`fixed inset-y-0 left-0 z-50 w-64 border-r border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-[#2f3033] flex flex-col justify-between transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex-1 flex flex-col min-h-0">
           <div className="p-4 border-b border-slate-300 dark:border-slate-800 flex items-center space-x-3 transition-colors duration-300">
             <img src="/logo.png" alt="HeimDall Logo" className="w-10 h-10 object-contain" />
@@ -105,7 +105,7 @@ export default function DashboardLayout({ children, activeNav }: Props) {
           </div>
         </div>
 
-        <div className="p-3 border-t border-slate-300 dark:border-slate-800 bg-slate-200 dark:bg-slate-900 transition-colors duration-300">
+        <div className="p-3 border-t border-slate-300 dark:border-slate-800 bg-slate-200 dark:bg-[#202124] transition-colors duration-300">
           <div className="text-xs text-slate-500 uppercase font-bold">Active Profile</div>
           <div className="text-sm font-bold truncate">{currentUser.name}</div>
           {/* Problem 16: Ensure HR is fully capitalized instead of 'Hr' */}
@@ -116,8 +116,8 @@ export default function DashboardLayout({ children, activeNav }: Props) {
       </aside>
 
       {/* 4. MAIN CONTENT AREA */}
-      <div className="flex-1 flex flex-col min-w-0 pt-[72px] md:pt-0">
-        <header className="min-h-14 py-2 md:py-0 border-b border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-[#0a0a0a] px-4 md:px-6 flex flex-col md:flex-row md:items-center justify-center md:justify-between gap-3 transition-colors duration-300">
+      <div className="flex-1 flex flex-col min-w-0 pt-[72px] md:pt-0 bg-white dark:bg-[#202124] transition-colors duration-300">
+        <header className="min-h-14 py-2 md:py-0 border-b border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-[#2f3033] px-4 md:px-6 flex flex-col md:flex-row md:items-center justify-center md:justify-between gap-3 transition-colors duration-300">
           
           <div className="text-sm font-bold text-slate-500 dark:text-slate-400 truncate">
             HeimDall &gt; <span className="capitalize">{activeNav}</span> &gt; <span className="capitalize text-slate-900 dark:text-white">{role} Dashboard</span>
@@ -141,7 +141,8 @@ export default function DashboardLayout({ children, activeNav }: Props) {
           </div>
         </header>
 
-        <main className="p-4 md:p-6 flex-1 overflow-y-auto">{children}</main>
+        {/* Problem 28 Fix: overflow-y-scroll permanently locks the scrollbar track on all tabs */}
+        <main className="p-4 md:p-6 flex-1 overflow-y-scroll">{children}</main>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-<div align="center">
-  <img src="./assets/heimdall-logo.png" alt="HeimDall Logo" width="260" />
+<div>
+  <img align="center" src="./assets/heimdall-logo.png" alt="HeimDall Logo" width="100" />
 
 # HeimDall
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "HeimDall — Enterprise Workspace",
   description: "Unified AI-grounded company intelligence and management platform",
   icons: {
-    icon: "/logo.png", // Points directly to public/logo.png
+    icon: "/logo.png",
   },
 };
 
@@ -24,7 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} font-sans text-base antialiased transition-colors duration-200 bg-white dark:bg-[#202124]`}>
+      {/* Removed banned pure white background, replaced with bg-slate-50[cite: 18] */}
+      <body className={`${plusJakartaSans.variable} font-sans text-base antialiased transition-colors duration-200 bg-slate-50 dark:bg-[#202124]`}>
         <WorkspaceProvider>
           {children}
         </WorkspaceProvider>

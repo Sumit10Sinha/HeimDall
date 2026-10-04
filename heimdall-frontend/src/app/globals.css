@@ -2,19 +2,18 @@
 @variant dark (&:where(.dark, .dark *));
 
 @layer base {
-  /* Strict Hackathon Guardrails */
+  /* Strict Hackathon Guardrails Enforced from J2M PDF */
   * {
-    border-radius: 0px !important;
-    box-shadow: none !important;
+    border-radius: 0px !important; /* xix. no soft corner radius[cite: 18] */
+    box-shadow: none !important; /* v. no drop shadows[cite: 18] */
   }
 
   body {
-    font-size: 16px;
+    font-size: 16px; /* Typography >=16px[cite: 17] */
     line-height: 1.5;
   }
 }
 
-/* Override Next.js default dark backgrounds if they exist */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #202124;

@@ -22,8 +22,8 @@ Companies often manage important information across spreadsheets, chat messages,
 
 | | Light | Dark |
 |---|---|---|
-| **Mobile (375px)** | [Mobile light](assets/Phone Light Mode.jpeg) | [Mobile dark](assets/Phone Dark Mode.jpeg) |
-| **Desktop (1280px)** | [Desktop light](assets/Laptop Light Mode.png) | [Desktop dark](assets/Laptop Dark Mode.png) |
+| **Mobile (375px)** | <img src="assets/mobile-light.jpeg" width="220"> | <img src="assets/mobile-dark.jpeg" width="220"> |
+| **Desktop (1280px)** | <img src="assets/desktop-light.png" width="420"> | <img src="assets/desktop-dark.png" width="420"> |
 
 ---
 
@@ -57,7 +57,7 @@ HeimDall brings a company's day-to-day work into one workspace. The landing page
 - [API Spec](./HeimDall_API_Spec.md)
 - [Roadmap](./HeimDall_Roadmap.md)
 - [Requirements](./HeimDall_Requirements.md)
-- ![Sketch](./sketches)
+- [Sketch](./sketches)
 
 ---
 
@@ -69,7 +69,7 @@ HeimDall brings a company's day-to-day work into one workspace. The landing page
 | Language | TypeScript | Strict type-checking |
 | Styling | Tailwind CSS v4 | Responsive, utility-first design |
 | State management | React Context API & `localStorage` | Session and data state that survives refreshes without a backend |
-| Data source | Local `mockData.json` | User profiles, tasks, contracts and projects |
+| Data source | Local `data.json` | User profiles, tasks, contracts and projects |
 | Deployment | Vercel | Hosts the production build |
 
 ---

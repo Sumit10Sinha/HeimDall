@@ -5,7 +5,7 @@ import DashboardLayout from "@/components/DashboardLayout";
 import { useWorkspace, Role } from "@/context/WorkspaceContext";
 
 export default function HomePage() {
-  const { isAuthenticated, login, logout, role, currentUser, tasks, contracts, projects, announcements, updateTaskStatus } = useWorkspace();
+  const { isAuthenticated, login, role, currentUser, tasks, contracts, projects, announcements, updateTaskStatus } = useWorkspace();
   
   const [chatInput, setChatInput] = useState("");
   const [isAiLoading, setIsAiLoading] = useState(false);
@@ -13,110 +13,113 @@ export default function HomePage() {
   const [hrSearchQuery, setHrSearchQuery] = useState("");
 
   const allEmployees = [
-    { name: "Swapnil Bej", role: "Employee", dept: "Engineering", status: "Active" },
-    { name: "Debasish Dey", role: "Manager", dept: "Engineering", status: "Active" },
-    { name: "Sumit Sinha", role: "Executive", dept: "C-Suite", status: "Active" },
-    { name: "Ankan Biswas", role: "HR", dept: "HR & People", status: "Active" },
-    { name: "Anamitra Kundu", role: "Employee", dept: "Design", status: "At Leave" }
+    { name: "Swapnil Bej", role: "Employee", team: "Engineering", status: "Active" },
+    { name: "Debasish Dey", role: "Manager", team: "Engineering", status: "Active" },
+    { name: "Sumit Sinha", role: "Executive", team: "C-Suite", status: "Active" },
+    { name: "Ankan Biswas", role: "HR", team: "People", status: "Active" },
+    { name: "Anamitra Kundu", role: "Employee", team: "Design", status: "Away" }
   ];
 
   const filteredEmployees = allEmployees.filter(emp => 
-    emp.name.toLowerCase().includes(hrSearchQuery.toLowerCase())
+    `${emp.name} ${emp.team} ${emp.role}`.toLowerCase().includes(hrSearchQuery.toLowerCase())
   );
 
   const handleAiSubmit = () => {
-    if (!chatInput.trim()) return;
+    if (!chatInput.trim() || isAiLoading) return;
     setIsAiLoading(true);
     setAiResponse(null);
     setTimeout(() => {
       setIsAiLoading(false);
-      setAiResponse("Since no Backend Integration has been done, we cant help you currently. Stay tuned and come back next week to use HeimDall AI");
+      setAiResponse("I found 3 relevant workspace signals. Your next best action is to review the blocked vendor contract.");
       setChatInput("");
     }, 2000);
   };
 
   const aiWidgetJSX = (
-    <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 flex flex-col h-64 animate-fade-in mt-auto transition-colors duration-300">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold">Heimdall AI</h2>
-        <svg className="w-6 h-6 text-slate-800 dark:text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-          <path strokeLinecap="square" strokeLinejoin="miter" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      </div>
-      
-      <div className="flex-1 overflow-y-auto mb-4 border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] p-4 flex flex-col transition-colors duration-300">
-        <div className="mt-auto space-y-3">
-          {/* Skeleton Loaders Required[cite: 17, 18] */}
-          {isAiLoading && (
-            <div className="space-y-3 animate-pulse w-full px-2">
-              <div className="h-4 bg-slate-300 dark:bg-slate-700 w-3/4"></div>
-              <div className="h-4 bg-slate-300 dark:bg-slate-700 w-full"></div>
-            </div>
-          )}
-          {!isAiLoading && aiResponse && (
-            <div className="text-base text-slate-900 dark:text-slate-100 border-l-4 border-slate-800 dark:border-slate-400 pl-4 py-1">
-              <span className="font-bold block text-base mb-2">AI Assistant</span>
-              {aiResponse}
-            </div>
-          )}
+    <aside className="border border-[#032f2b] bg-[#032f2b] text-[#dce8df] p-8 flex flex-col h-full sticky top-6 animate-fade-in">
+      <div className="flex justify-start items-center gap-5 mb-8">
+        <span className="grid place-items-center w-10 h-10 bg-[#a3e635] text-[#02221f] font-black text-2xl flex-shrink-0">H</span>
+        <div>
+          <p className="text-base uppercase tracking-widest font-black text-[#a3e635] m-0">Heimdall Intelligence</p>
+          <h2 className="text-2xl font-black text-white m-0 tracking-tight">Ask your workspace</h2>
         </div>
       </div>
+      
+      <p className="text-lg leading-relaxed mb-8">Get a clear read on priorities, people, and progress.</p>
 
-      <div className="flex border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] transition-colors duration-300">
+      <div className="flex-1 flex flex-col justify-end min-h-[120px] mb-8">
+        {/* Strict Skeleton Loader Requirements */}
+        {isAiLoading && (
+          <div className="flex flex-col gap-3">
+            <span className="block h-4 bg-[#6c8f7d] animate-pulse-custom"></span>
+            <span className="block h-4 bg-[#6c8f7d] animate-pulse-custom w-3/4" style={{ animationDelay: '0.15s' }}></span>
+          </div>
+        )}
+        {!isAiLoading && aiResponse && (
+          <p className="text-lg leading-relaxed border-l-4 border-[#a3e635] pl-4 text-white font-bold">{aiResponse}</p>
+        )}
+      </div>
+
+      <div className="flex border-2 border-[#91a99e] bg-[#032f2b]">
         <input 
           type="text" 
-          placeholder="Ask AI..." 
-          className="w-full bg-transparent p-3 text-base outline-none font-bold placeholder-slate-500 dark:placeholder-slate-400 text-slate-900 dark:text-white"
+          placeholder="Ask anything..." 
+          className="w-full bg-transparent p-4 text-lg outline-none font-bold placeholder-[#9bb0a5] text-white"
           value={chatInput}
           onChange={(e) => setChatInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleAiSubmit()}
         />
-        <button onClick={handleAiSubmit} className="px-5 text-xl hover:bg-slate-200 dark:hover:bg-slate-700 font-bold border-l-2 border-slate-300 dark:border-slate-700 transition-colors duration-300">+</button>
+        <button onClick={handleAiSubmit} className="w-14 bg-[#a3e635] text-[#02221f] text-2xl font-black transition-colors hover:bg-white">→</button>
       </div>
-    </div>
+    </aside>
   );
 
-  // === LANDING PAGE ===
+  // === UNIQUE V0 LANDING PAGE ===
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-[#202124] text-slate-900 dark:text-slate-100 flex flex-col font-sans animate-fade-in transition-colors duration-300 ease-in-out">
-        <header className="border-b border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] px-8 py-5 flex justify-between items-center transition-colors duration-300">
-          <div className="flex items-center space-x-4">
-            <img src="/logo.png" alt="HeimDall Logo" className="w-12 h-12 object-contain" />
-            <div>
-              <span className="font-bold tracking-wider text-2xl block leading-none text-slate-900 dark:text-white">HEIMDALL</span>
-              <span className="text-base text-slate-600 dark:text-slate-400 uppercase tracking-widest block mt-1">Stay Ahead</span>
-            </div>
+      <div className="min-h-screen bg-[#10201e] text-[#f3f5ef] font-sans flex flex-col p-6 md:p-10 lg:p-14 animate-fade-in">
+        <header className="flex justify-between items-center border-b border-[#f3f5ef]/20 pb-5">
+          <div className="font-black tracking-widest flex items-center gap-3 text-xl">
+            <span className="grid place-items-center w-8 h-8 bg-[#a3e635] text-[#02221f]">H</span> HEIMDALL
           </div>
+          <span className="text-[#a3e635] text-sm md:text-base font-black tracking-widest uppercase hidden md:block">Workspace Access / 01</span>
         </header>
 
-        <main className="flex-1 flex flex-col items-center justify-center p-6 text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 uppercase text-slate-900 dark:text-white transition-colors duration-300">
-            Unify Your Company.<br />Empower Your Team.
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-14 max-w-3xl font-bold">
-            The high-fidelity enterprise workspace powered by grounded AI intelligence.
-          </p>
+        <main className="flex-1 flex flex-col max-w-6xl w-full mx-auto py-16">
+          <div className="max-w-2xl mb-16">
+            <p className="text-base uppercase tracking-widest font-black text-[#a3e635] mb-4">Welcome back / secure workspace</p>
+            <h1 className="text-6xl md:text-8xl font-black leading-[0.88] tracking-tighter mb-6">
+              Choose your<br /><span className="text-[#a3e635]">access layer.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-[#f3f5ef]/70 font-bold max-w-xl">
+              Enter HeimDall through the view built for your role. You can switch perspectives at any time.
+            </p>
+          </div>
 
-          <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-10 w-full max-w-xl text-left transition-colors duration-300">
-            <h2 className="text-2xl font-bold mb-3">Access Workspace</h2>
-            <p className="text-base text-slate-600 dark:text-slate-400 mb-8 font-bold">Select a persona to test the role-based MVP.</p>
-            
-            <div className="space-y-4">
-              {/* Removed banned hover animations (group-hover:translate-x-1)[cite: 18] */}
-              {(["employee", "manager", "hr", "executive"] as Role[]).map((r) => (
-                <button 
-                  key={r}
-                  onClick={() => login(r)}
-                  className="w-full flex justify-between items-center border-2 border-slate-400 dark:border-slate-500 p-5 hover:bg-slate-800 hover:text-white dark:hover:bg-slate-200 dark:hover:text-black transition-colors duration-300 bg-slate-50 dark:bg-[#202124]"
-                >
-                  <span className="font-bold text-lg capitalize">Login as {r}</span>
-                  <span className="text-2xl font-bold">→</span>
-                </button>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {(["Employee", "Manager", "HR", "Executive"] as Role[]).map((r, idx) => (
+              <button 
+                key={r}
+                onClick={() => login(r.toLowerCase() as Role)}
+                className="text-left bg-[#f3f5ef]/5 border border-[#f3f5ef]/20 p-6 min-h-[280px] flex flex-col transition-colors hover:bg-[#a3e635] hover:text-[#10201e] group focus:outline-none"
+              >
+                <span className="text-base opacity-65 font-bold mb-6 block">0{idx + 1}</span>
+                <span className="grid place-items-center w-14 h-14 border-2 border-current rounded-full font-black text-xl mb-4 group-hover:bg-[#10201e] group-hover:text-[#a3e635] transition-colors">{r.substring(0,2).toUpperCase()}</span>
+                <span className="text-3xl font-black tracking-tight mb-3">{r}</span>
+                <span className="text-base font-bold opacity-75 mb-8">Access the {r.toLowerCase()} MVP workflow and metrics.</span>
+                
+                <span className="mt-auto pt-5 border-t border-current/20 flex justify-between items-center text-base font-black uppercase tracking-widest w-full">
+                  Enter View <span className="text-2xl leading-none">→</span>
+                </span>
+              </button>
+            ))}
           </div>
         </main>
+
+        <footer className="flex justify-between items-center border-t border-[#f3f5ef]/20 pt-5 text-base font-black tracking-widest opacity-70 uppercase">
+          <span>Heimdall / Make Work Visible</span>
+          <span>© 2026</span>
+        </footer>
       </div>
     );
   }
@@ -124,249 +127,159 @@ export default function HomePage() {
   // === DASHBOARD VIEW ===
   return (
     <DashboardLayout activeNav="Overview">
-      <div className="w-full min-h-[101vh] pb-8">
-        <div className="mb-8 animate-fade-in flex flex-col sm:flex-row sm:items-center justify-between gap-6 w-full">
+      <div className="p-6 md:p-10 lg:p-14 max-w-[1500px] mx-auto animate-fade-in pb-20">
+        
+        {/* Welcome Section */}
+        <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-b-2 border-[#032f2b] pb-10 mb-10">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Welcome Back, {currentUser.name}!</h1>
+            <p className="text-base uppercase tracking-widest font-black text-[#62716d] mb-4">{role} workspace / October 07, 2026</p>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.85] tracking-tighter text-[#032f2b] mb-6">
+              MAKE WORK<br /><span className="text-[#5d8d23]">VISIBLE.</span>
+            </h1>
+            <p className="text-xl font-bold max-w-2xl text-[#10201e] m-0">One focused view for the people, projects, and decisions moving your organization forward.</p>
           </div>
-          <button onClick={logout} className="text-base font-bold border-2 border-red-500 text-red-600 dark:text-red-400 px-8 py-3 hover:bg-red-50 dark:hover:bg-red-950 transition-colors w-full sm:w-auto whitespace-nowrap shrink-0">
-            Sign Out
-          </button>
-        </div>
+          <div className="border-4 border-[#032f2b] p-6 text-2xl font-black min-w-[200px] text-center uppercase text-[#032f2b]">
+            {role}<br /><span className="text-lg text-[#5d8d23]">ACCESS LAYER 0{["employee", "manager", "hr", "executive"].indexOf(role) + 1}</span>
+          </div>
+        </section>
 
-        {role === "employee" && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in">
-            <div className="lg:col-span-2 space-y-8">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Pending Tasks</h2>
-                <div className="space-y-3">
-                  <div className="grid grid-cols-5 gap-4 items-center px-4 pb-3 border-b-2 border-slate-300 dark:border-slate-700 text-base font-bold text-slate-600 dark:text-slate-400">
-                    <div className="col-span-2">Task</div>
-                    <div>Project</div>
-                    <div>Priority</div>
-                    <div>Status</div>
-                  </div>
+        {/* Universal Metrics */}
+        <section className="grid grid-cols-2 lg:grid-cols-4 border-b border-[#bdc7bd] mb-10 pb-2">
+          <div className="pr-5 lg:pr-0 lg:border-r border-[#bdc7bd] mb-8 lg:mb-0"><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Open tasks</p><strong className="block text-6xl text-[#032f2b] font-black my-3">12</strong><p className="text-base font-bold text-[#62716d] m-0">3 due today</p></div>
+          <div className="pl-5 lg:px-5 lg:border-r border-[#bdc7bd] mb-8 lg:mb-0"><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Active projects</p><strong className="block text-6xl text-[#032f2b] font-black my-3">08</strong><p className="text-base font-bold text-[#62716d] m-0">2 need attention</p></div>
+          <div className="pr-5 lg:px-5 lg:border-r border-[#bdc7bd]"><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Team pulse</p><strong className="block text-6xl text-[#032f2b] font-black my-3">84%</strong><p className="text-base font-bold text-[#62716d] m-0">+6% this month</p></div>
+          <div className="pl-5 lg:pl-5"><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Decisions</p><strong className="block text-6xl text-[#032f2b] font-black my-3">05</strong><p className="text-base font-bold text-[#62716d] m-0">Awaiting review</p></div>
+        </section>
 
-                  {tasks.map(task => (
-                    <div key={task.id} className="grid grid-cols-5 gap-4 items-center border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] p-4 transition-colors duration-300">
-                      <span className="col-span-2 text-base font-bold truncate pr-2">{task.title}</span>
-                      <span className="text-base font-bold text-slate-600 dark:text-slate-400 truncate pr-2">
-                        {/* @ts-ignore */}
-                        {task.projectName || 'General'} 
-                      </span>
-                      <span className={`text-base font-bold ${task.priority === 'High' ? 'text-red-600 dark:text-red-400' : 'text-amber-600 dark:text-amber-400'}`}>{task.priority}</span>
-                      
-                      <select 
-                        value={task.status} 
-                        onChange={(e) => updateTaskStatus(task.id, e.target.value)} 
-                        className="bg-slate-50 dark:bg-[#202124] text-slate-900 dark:text-white border-2 border-slate-400 dark:border-slate-600 p-2 text-base font-bold outline-none w-full cursor-pointer transition-colors duration-300"
-                      >
-                        <option className="bg-white text-black dark:bg-[#2f3033] dark:text-white" value="To Do">To Do</option>
-                        <option className="bg-white text-black dark:bg-[#2f3033] dark:text-white" value="In Progress">In Progress</option>
-                        <option className="bg-white text-black dark:bg-[#2f3033] dark:text-white" value="Completed">Completed</option>
-                      </select>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_0.75fr] gap-8 items-start">
+          
+          <div className="flex flex-col gap-8">
+            {role === "employee" && (
+              <section className="border-2 border-[#032f2b] bg-[#e9eee7] p-8">
+                <div className="flex justify-between items-start mb-8">
+                  <div><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Your focus</p><h2 className="text-4xl font-black text-[#032f2b] tracking-tight mt-2 m-0">Priority queue</h2></div>
+                  <span className="text-base border-2 border-[#032f2b] px-3 py-2 text-[#032f2b] font-black uppercase">{role}</span>
+                </div>
+                {tasks.map(task => (
+                  <div className="flex items-center gap-4 border-t-2 border-[#bdc7bd] py-5 mt-2" key={task.id}>
+                    <span className={`w-4 h-4 flex-shrink-0 ${task.status === 'Completed' ? 'bg-[#749d35]' : task.status === 'Blocked' ? 'bg-[#bd5e3a]' : task.status === 'In Progress' ? 'bg-[#a3e635]' : 'bg-[#84918b]'}`} /> 
+                    <div className="flex-1">
+                      <b className="text-xl font-black text-[#10201e]">{task.title}</b>
+                      <p className="text-base font-bold text-[#62716d] m-0 mt-1">{task.owner} · Priority: {task.priority}</p>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="space-y-8 flex flex-col">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 mb-8 transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Active Projects</h2>
-                {projects.map(p => (
-                  <div key={p.id} className="border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] p-4 mb-3 transition-colors duration-300">
-                    <div className="font-bold text-lg mb-1">{p.name}</div>
-                    <div className="text-base font-bold text-slate-600 dark:text-slate-400">Status: {p.status} ({p.progress}%)</div>
+                    <select 
+                      value={task.status} 
+                      onChange={(e) => updateTaskStatus(task.id, e.target.value)} 
+                      className="bg-transparent border-2 border-[#bdc7bd] p-2 text-base font-bold outline-none cursor-pointer text-[#62716d] hover:border-[#032f2b]"
+                    >
+                      <option value="To Do">To Do</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Completed">Completed</option>
+                    </select>
                   </div>
                 ))}
-              </div>
-              {aiWidgetJSX}
-            </div>
-          </div>
-        )}
+              </section>
+            )}
 
-        {role === "manager" && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in">
-            <div className="lg:col-span-2 space-y-8">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Workload Status Overview</h2>
-                <div className="h-64 flex flex-col pt-6">
-                  <div className="flex-1 flex items-end space-x-8 border-l-4 border-b-4 border-slate-300 dark:border-slate-700 pl-6 pb-2">
-                    {['To Do', 'In Progress', 'Blocked', 'Completed'].map(status => {
-                      
-                      const overrideCounts: Record<string, number> = { 'To Do': 3, 'In Progress': 4, 'Blocked': 2, 'Completed': 4 };
-                      const count = tasks.length <= 4 ? overrideCounts[status] : (tasks.length === 15 ? overrideCounts[status] : tasks.filter(t => t.status === status).length);
-                      const maxTasks = 4;
-                      const heightPct = count > 0 ? (count / maxTasks) * 100 : 5;
-                      
-                      let barColor = "bg-slate-800 dark:bg-slate-200";
-                      if(status === 'Blocked') barColor = "bg-red-500";
-                      if(status === 'Completed') barColor = "bg-green-500";
-                      if(status === 'In Progress') barColor = "bg-amber-500";
+            {role === "manager" && (
+              <section className="border-2 border-[#032f2b] bg-[#e9eee7] p-8">
+                <div className="flex justify-between items-start mb-8">
+                  <div><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Manager view</p><h2 className="text-4xl font-black text-[#032f2b] tracking-tight mt-2 m-0">Team workload</h2></div>
+                  <span className="text-base border-2 border-[#032f2b] px-3 py-2 text-[#032f2b] font-black uppercase">Live Snapshot</span>
+                </div>
+                <div className="mt-10">
+                  {['To Do', 'In Progress', 'Blocked', 'Completed'].map(status => {
+                    const count = tasks.filter(t => t.status === status).length;
+                    const pct = Math.max((count / Math.max(tasks.length, 1)) * 100, 5);
+                    return (
+                      <div className="grid grid-cols-[140px_1fr_40px] items-center gap-4 my-6" key={status}>
+                        <span className="text-lg font-black text-[#10201e] uppercase tracking-wide">{status}</span>
+                        <div className="h-5 bg-[#cbd4ca]"><div className={`h-full ${status === 'Completed' ? 'bg-[#749d35]' : status === 'Blocked' ? 'bg-[#bd5e3a]' : status === 'In Progress' ? 'bg-[#a3e635]' : 'bg-[#84918b]'}`} style={{ width: `${pct}%` }} /></div>
+                        <b className="text-2xl font-black text-[#032f2b] text-right">{count}</b>
+                      </div>
+                    )
+                  })}
+                </div>
+              </section>
+            )}
 
-                      return (
-                        <div key={status} className="flex-1 flex flex-col items-center justify-end h-full relative">
-                          <span className="text-base font-bold mb-2">{count}</span>
-                          <div className={`w-full ${barColor} transition-all duration-500`} style={{ height: `${heightPct}%` }}></div>
+            {role === "hr" && (
+              <section className="border-2 border-[#032f2b] bg-[#e9eee7] p-8">
+                <div className="flex justify-between items-start mb-8">
+                  <div><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">People operations</p><h2 className="text-4xl font-black text-[#032f2b] tracking-tight mt-2 m-0">Employee directory</h2></div>
+                  <span className="text-base border-2 border-[#032f2b] px-3 py-2 text-[#032f2b] font-black uppercase">{allEmployees.length} People</span>
+                </div>
+                <input 
+                  className="w-full border-2 border-[#bdc7bd] p-4 text-lg font-bold bg-transparent text-[#10201e] placeholder-[#62716d] mb-4 focus:border-[#032f2b] outline-none" 
+                  placeholder="Search name, team, or role" 
+                  value={hrSearchQuery} 
+                  onChange={(e) => setHrSearchQuery(e.target.value)} 
+                />
+                {filteredEmployees.length ? (
+                  <div>
+                    {filteredEmployees.map((person) => (
+                      <div className="flex items-center gap-5 border-t-2 border-[#bdc7bd] py-5 mt-2" key={person.name}>
+                        <span className="grid place-items-center w-12 h-12 bg-[#032f2b] text-[#a3e635] font-black text-xl">{person.name.split(' ').map(p => p[0]).join('')}</span>
+                        <div className="flex-1">
+                          <b className="text-xl font-black text-[#10201e]">{person.name}</b>
+                          <p className="text-base font-bold text-[#62716d] m-0 mt-1">{person.role} · {person.team}</p>
                         </div>
-                      );
-                    })}
-                  </div>
-                  <div className="flex space-x-8 pl-6 mt-4">
-                    {['To Do', 'In Progress', 'Blocked', 'Completed'].map(status => (
-                      <div key={status} className="flex-1 text-center text-base font-bold text-slate-700 dark:text-slate-300 truncate">{status}</div>
+                        <span className="text-base font-black uppercase tracking-widest text-[#62716d]">{person.status}</span>
+                      </div>
                     ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Active Projects</h2>
-                <table className="w-full table-fixed text-left">
-                  <thead><tr className="border-b-2 border-slate-300 dark:border-slate-700"><th className="pb-3 text-base font-bold text-slate-600 dark:text-slate-400">Project</th><th className="pb-3 text-base font-bold text-slate-600 dark:text-slate-400">Status</th><th className="pb-3 text-base font-bold text-slate-600 dark:text-slate-400">Lead</th></tr></thead>
-                  <tbody>
-                    {projects.map(p => (
-                      <tr key={p.id} className="border-b-2 border-slate-300 dark:border-slate-700 transition-colors duration-300">
-                        <td className="py-4 text-base font-bold truncate pr-2">{p.name}</td>
-                        <td className="py-4 text-base font-bold">{p.status}</td>
-                        <td className="py-4 text-base font-bold">{p.lead}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className="space-y-8 flex flex-col">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 mb-8 transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Quick Actions</h2>
-                <button className="w-full bg-slate-800 text-white dark:bg-slate-200 dark:text-black p-3 mb-4 font-bold text-lg transition-colors hover:bg-slate-700 dark:hover:bg-slate-300">+ New Task</button>
-                <button className="w-full border-2 border-slate-400 dark:border-slate-500 p-3 font-bold text-lg hover:bg-slate-200 dark:hover:bg-slate-700 bg-slate-50 dark:bg-[#202124] transition-colors">Upload Contract</button>
-              </div>
-              {aiWidgetJSX}
-            </div>
-          </div>
-        )}
-
-        {role === "hr" && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in">
-            <div className="space-y-8">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <div className="flex justify-between mb-6">
-                  <h2 className="text-xl font-bold">Onboardings</h2>
-                  <button className="border-2 border-slate-400 dark:border-slate-600 bg-slate-50 dark:bg-[#202124] px-4 py-1 text-base font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">+ New</button>
-                </div>
-                <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] p-4 text-lg font-bold transition-colors duration-300">
-                  <span className="text-green-600 mr-2">&bull;</span> New Hire Onboarding
-                </div>
-              </div>
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Announcements</h2>
-                {announcements.map(a => (
-                  <div key={a.id} className="border-b-2 border-slate-300 dark:border-slate-700 pb-4 mb-4 text-base transition-colors duration-300">
-                    <span className="font-bold text-lg block mb-1">{a.title}</span>
-                    <span className="text-slate-700 dark:text-slate-400 font-bold">By {a.author}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="lg:col-span-2 space-y-8 flex flex-col">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <div className="flex justify-between items-center mb-8">
-                  <h2 className="text-xl font-bold">Employee Directory</h2>
-                  <input 
-                    type="text" 
-                    placeholder="Search name..." 
-                    className="border-2 border-slate-400 dark:border-slate-600 bg-slate-50 dark:bg-[#202124] p-2.5 px-4 text-base font-bold outline-none w-64 placeholder-slate-500 dark:placeholder-slate-400 text-slate-900 dark:text-white transition-colors duration-300"
-                    value={hrSearchQuery}
-                    onChange={(e) => setHrSearchQuery(e.target.value)}
-                  />
-                </div>
-                <div className="grid grid-cols-3 gap-6 text-center mb-8 border-b-2 border-slate-300 dark:border-slate-700 pb-6 transition-colors duration-300">
-                  <div><div className="text-lg text-slate-600 dark:text-slate-400 font-bold mb-1">Total</div><div className="text-3xl font-bold">{allEmployees.length}</div></div>
-                  <div className="border-l-2 border-r-2 border-slate-300 dark:border-slate-700"><div className="text-lg text-slate-600 dark:text-slate-400 font-bold mb-1">Active</div><div className="text-3xl font-bold">4</div></div>
-                  <div><div className="text-lg text-slate-600 dark:text-slate-400 font-bold mb-1">At Leave</div><div className="text-3xl font-bold">1</div></div>
-                </div>
-                
-                {/* Intentional Empty State Design[cite: 17] */}
-                {filteredEmployees.length === 0 ? (
-                  <div className="border-2 border-dashed border-slate-400 dark:border-slate-600 p-12 text-center text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-[#202124] transition-colors duration-300">
-                    <p className="font-bold text-2xl mb-2">No employees found</p>
-                    <p className="text-lg font-bold">Try adjusting your search query.</p>
                   </div>
                 ) : (
-                  <table className="w-full table-fixed text-left">
-                    <thead><tr className="border-b-2 border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-colors duration-300"><th className="pb-3 text-base font-bold">Name</th><th className="pb-3 text-base font-bold">Role</th><th className="pb-3 text-base font-bold">Status</th></tr></thead>
-                    <tbody>
-                      {filteredEmployees.map((emp, idx) => (
-                        <tr key={idx} className="border-b-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] transition-colors duration-300">
-                          <td className="py-4 px-3 text-base font-bold truncate">{emp.name}</td>
-                          <td className="py-4 text-base font-bold">{emp.role}</td>
-                          <td className={`py-4 text-base font-bold ${emp.status === 'Active' ? 'text-green-600' : 'text-amber-600'}`}>&bull; {emp.status}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                )}
-              </div>
-              
-              {aiWidgetJSX}
-            </div>
-          </div>
-        )}
-
-        {role === "executive" && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in">
-            <div className="lg:col-span-2 space-y-8">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-bold">Weekly AI Company Summary</h2>
-                  <button className="bg-slate-50 dark:bg-[#202124] border-2 border-slate-400 dark:border-slate-600 px-4 py-2 text-base font-bold transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">See More</button>
-                </div>
-                <ul className="list-disc pl-6 text-lg font-bold space-y-3">
-                  <li>Q3 targets on track. Cost variance anomaly detected in 'Marketing - Apex' project.</li>
-                  <li>AI review of new Vendor B contract flags 2 critical clauses.</li>
-                  <li>Workspace activity up 15% across Engineering team.</li>
-                </ul>
-              </div>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                  <h2 className="text-xl font-bold mb-4">Key Risks (Critical)</h2>
-                  <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] p-4 transition-colors duration-300">
-                    <p className="text-lg font-bold text-red-600 dark:text-red-400 mb-1">Departmental Cost Variance</p>
-                    <p className="text-base font-bold mb-4">Project: Apollo (+18%)</p>
-                    <button className="text-base font-bold border-2 border-slate-400 dark:border-slate-600 bg-slate-100 dark:bg-[#2f3033] px-4 py-2 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Assign Follow-up</button>
+                  <div className="border-4 border-dashed border-[#7f9188] p-12 text-center mt-6">
+                    <b className="text-2xl font-black text-[#10201e] block mb-2 uppercase tracking-tight">No Matches Found</b>
+                    <p className="text-lg font-bold text-[#62716d] m-0">Try searching for another name, team, or role.</p>
                   </div>
-                </div>
-                <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 transition-colors duration-300">
-                  <h2 className="text-xl font-bold mb-4">Contractual Alerts</h2>
-                  {contracts.map(c => (
-                    <div key={c.id} className="border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-[#202124] p-4 mb-3 transition-colors duration-300">
-                      <p className="text-lg font-bold mb-1">{c.title}</p>
-                      <p className="text-base text-amber-600 dark:text-amber-400 font-bold">{c.riskClause}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="space-y-8 flex flex-col">
-              <div className="border-2 border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-[#2f3033] p-6 text-center mb-8 flex flex-col justify-center transition-colors duration-300">
-                <h2 className="text-xl font-bold mb-6">Organization Risk Score</h2>
-                <div className="text-6xl font-bold text-amber-500 mb-6">6<span className="text-3xl text-slate-600 dark:text-slate-400">/10</span></div>
-                
-                <div className="w-full relative h-6 flex mb-4 border-2 border-slate-400 dark:border-slate-600">
-                  <div className="flex-1 bg-green-500"></div>
-                  <div className="flex-1 bg-amber-500"></div>
-                  <div className="flex-1 bg-red-500"></div>
-                  <div className="absolute top-[-6px] bottom-[-6px] w-2 bg-slate-900 dark:bg-white transition-colors duration-300" style={{ left: '60%' }}></div>
-                </div>
-                <div className="text-base font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest mt-2">Medium Risk Threshold</div>
-              </div>
+                )}
+              </section>
+            )}
 
-              {aiWidgetJSX}
-            </div>
+            {role === "executive" && (
+              <section className="border-2 border-[#032f2b] bg-[#e9eee7] p-8">
+                <div className="flex justify-between items-start mb-8">
+                  <div><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Executive view</p><h2 className="text-4xl font-black text-[#032f2b] tracking-tight mt-2 m-0">Contract Alerts</h2></div>
+                  <span className="text-base border-2 border-[#032f2b] px-3 py-2 text-[#032f2b] font-black uppercase">Critical Only</span>
+                </div>
+                {contracts.map(c => (
+                  <div className="border-t-2 border-[#bdc7bd] py-5 mt-2" key={c.id}>
+                    <div className="flex justify-between items-center mb-2">
+                      <b className="text-xl font-black text-[#10201e]">{c.title}</b>
+                      <span className="text-base font-black text-[#bd5e3a] uppercase tracking-widest">Review Req</span>
+                    </div>
+                    <p className="text-lg font-bold text-[#62716d] m-0">{c.riskClause}</p>
+                  </div>
+                ))}
+              </section>
+            )}
+
+            <section className="border-2 border-[#032f2b] bg-[#e9eee7] p-8">
+              <div className="flex justify-between items-start mb-8">
+                <div><p className="text-base font-black uppercase tracking-widest text-[#62716d] m-0">Across HeimDall</p><h2 className="text-4xl font-black text-[#032f2b] tracking-tight mt-2 m-0">Project signals</h2></div>
+                <span className="text-base border-2 border-[#032f2b] px-3 py-2 text-[#032f2b] font-black uppercase">Q4 / 2026</span>
+              </div>
+              {projects.map((project) => (
+                <div className="border-t-2 border-[#bdc7bd] py-5 mt-2" key={project.name}>
+                  <div className="flex justify-between items-end mb-3">
+                    <b className="text-xl font-black text-[#10201e]">{project.name}</b>
+                    <span className="text-base font-black uppercase text-[#5d8d23]">{project.status}</span>
+                  </div>
+                  <div className="h-4 bg-[#cbd4ca] mb-3"><div style={{ width: `${project.progress}%` }} className="h-full bg-[#032f2b]" /></div>
+                  <p className="text-base font-bold text-[#62716d] m-0 flex justify-between">
+                    <span>Lead: {project.lead}</span>
+                    <span className="font-black text-[#10201e]">{project.progress}% Complete</span>
+                  </p>
+                </div>
+              ))}
+            </section>
           </div>
-        )}
+
+          <div className="sticky top-6">
+            {aiWidgetJSX}
+          </div>
+        </div>
       </div>
     </DashboardLayout>
   );

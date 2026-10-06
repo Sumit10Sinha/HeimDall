@@ -22,8 +22,8 @@ Companies often manage important information across spreadsheets, chat messages,
 
 | | Light | Dark |
 |---|---|---|
-| **Mobile (375px)** | ![Mobile light](assets/Phone Light Mode.jpeg) | ![Mobile dark](assets/Phone Dark Mode.jpeg) |
-| **Desktop (1280px)** | ![Desktop light](assets/Laptop Light Mode.png) | ![Desktop dark](assets/Laptop Dark Mode.png) |
+| **Mobile (375px)** | [Mobile light](assets/Phone Light Mode.jpeg) | [Mobile dark](assets/Phone Dark Mode.jpeg) |
+| **Desktop (1280px)** | [Desktop light](assets/Laptop Light Mode.png) | [Desktop dark](assets/Laptop Dark Mode.png) |
 
 ---
 
